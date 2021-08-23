@@ -31,7 +31,7 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //Updates the doog breed list
+        //3b. Data source usage - Updates the doog breed list
         dogServices.breeds { result in
             if case let .success(breeds) = result {
                 var snapshot = NSDiffableDataSourceSnapshot<Section, DogBreed>()
@@ -48,11 +48,12 @@ class ListViewController: UIViewController {
     //MARK: - Collection View layout
     
     private func configureHierarchy() {
+        //1b. layout setup - defines the created list template as the collection view layout.
         collectionView.collectionViewLayout = createLayout()
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        //Defines a plain list layout
+        //1a. layout setup - Defines a plain list layout
         let config = UICollectionLayoutListConfiguration(appearance: .plain)
         return UICollectionViewCompositionalLayout.list(using: config)
     }
@@ -61,12 +62,14 @@ class ListViewController: UIViewController {
     
     private func configureDataSource() {
         
+        //2a. - Cell registration
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, DogBreed> { (cell, indexPath, item) in
             var content = cell.defaultContentConfiguration()
             content.text = item.name
             cell.contentConfiguration = content
         }
         
+        //2b. - Data Source setup
         dataSource = UICollectionViewDiffableDataSource<Section, DogBreed>(collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, identifier: DogBreed) -> UICollectionViewCell? in
             
@@ -76,6 +79,7 @@ class ListViewController: UIViewController {
         }
         
         // initial data
+        //3a. - Data source usage - Empty list setup
         var snapshot = NSDiffableDataSourceSnapshot<Section, DogBreed>()
         snapshot.appendSections([.main])
         dataSource.apply(snapshot, animatingDifferences: false)
