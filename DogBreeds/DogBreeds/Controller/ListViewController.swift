@@ -10,14 +10,14 @@ import UIKit
 
 /// View Controller for a list (Table view like) collection view
 class ListViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     enum Section: String {
         case main
     }
     
-    var dataSource: UICollectionViewDiffableDataSource<Section, DogBreed>! = nil
+    var dataSource: UICollectionViewDiffableDataSource<String, DogBreed>! = nil
     var dogServices = DogServices()
     
     //MARK:- View Life cycle
@@ -32,14 +32,16 @@ class ListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //3b. Data source usage - Updates the doog breed list
-        dogServices.breeds { result in
-            if case let .success(breeds) = result {
-                var snapshot = NSDiffableDataSourceSnapshot<Section, DogBreed>()
-                snapshot.appendSections([.main])
-                snapshot.appendItems(breeds, toSection: .main)
-                //The data source update must be done in the main queue
+        dogServices.breedGroups { [self] result in
+            if case let .success(breedGroups) = result {
+                var snapshot = NSDiffableDataSourceSnapshot<String, DogBreed>()
+                snapshot.appendSections(Array<String>(breedGroups.keys))
+                for group in breedGroups.keys {
+                    let breeds = breedGroups[group] ?? []
+                    snapshot.appendItems(breeds, toSection: group)
+                }
                 OperationQueue.main.addOperation {
-                    self.dataSource.apply(snapshot, animatingDifferences: true)
+                    dataSource.apply(snapshot, animatingDifferences: false)
                 }
             }
         }
@@ -54,7 +56,8 @@ class ListViewController: UIViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         //1a. layout setup - Defines a plain list layout
-        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+        var config = UICollectionLayoutListConfiguration(appearance: .plain)
+        config.headerMode = .supplementary
         return UICollectionViewCompositionalLayout.list(using: config)
     }
     
@@ -69,19 +72,39 @@ class ListViewController: UIViewController {
             cell.contentConfiguration = content
         }
         
-        //2b. - Data Source setup
-        dataSource = UICollectionViewDiffableDataSource<Section, DogBreed>(collectionView: collectionView) {
+        //2b. - Header registration
+        let headerRegistration =
+            
+            UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind:"header") { (supplementaryView, sectionName, indexPath) in
+                
+                let identifiers = self.dataSource.snapshot().sectionIdentifiers
+                
+                var content = UIListContentConfiguration.plainHeader()
+                
+                let breedType = identifiers[indexPath.section]
+                
+                content.text = breedType.isEmpty ? " " : breedType
+                
+                
+                supplementaryView.contentConfiguration = content
+                
+            }
+        
+        //2c. - Data Source setup
+        dataSource = UICollectionViewDiffableDataSource<String, DogBreed>(collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, identifier: DogBreed) -> UICollectionViewCell? in
             
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration,
                                                                 for: indexPath,
                                                                 item: identifier)
         }
+        //2d. - Sata Source supplementary view setup
+        dataSource.supplementaryViewProvider = { (collectionView, kind, index) in
+            return collectionView.dequeueConfiguredReusableSupplementary(using: headerRegistration, for: index)
+        }
         
-        // initial data
         //3a. - Data source usage - Empty list setup
-        var snapshot = NSDiffableDataSourceSnapshot<Section, DogBreed>()
-        snapshot.appendSections([.main])
+        let snapshot = NSDiffableDataSourceSnapshot<String, DogBreed>()
         dataSource.apply(snapshot, animatingDifferences: false)
         
     }
