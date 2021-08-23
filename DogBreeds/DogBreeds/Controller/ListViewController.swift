@@ -64,7 +64,7 @@ class ListViewController: UIViewController {
         
         //2a. - Cell registration
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, DogBreed> { (cell, indexPath, item) in
-            var content = cell.defaultContentConfiguration()
+            var content = UIListContentConfiguration.cell()
             content.text = item.name
             cell.contentConfiguration = content
         }
