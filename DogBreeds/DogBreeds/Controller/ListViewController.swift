@@ -66,12 +66,10 @@ class ListViewController: UIViewController {
     private func configureDataSource() {
         
         //2a. - Cell registration
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, DogBreed> { (cell, indexPath, item) in
-            var content = UIListContentConfiguration.cell()
-            content.text = item.name
-            cell.contentConfiguration = content
+        let cellRegistration = UICollectionView.CellRegistration<BreedRow, DogBreed>(cellNib: UINib(nibName: "BreedRow", bundle: nil)) { cell, indexPath, item in
+            cell.label.text = item.name
         }
-        
+
         //2b. - Header registration
         let headerRegistration = UICollectionView.SupplementaryRegistration<HeaderCell>(supplementaryNib: UINib(nibName: "HeaderCell",
                                          bundle: nil),
