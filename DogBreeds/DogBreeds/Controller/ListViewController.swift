@@ -87,7 +87,7 @@ class ListViewController: UIViewController {
             let breedGroup = identifiers[indexPath.section]
             
             
-            supplementaryView.titleLabel.text = breedGroup.isEmpty ? " ": breedGroup
+            supplementaryView.title = breedGroup.isEmpty ? " " : breedGroup
             
         }
         

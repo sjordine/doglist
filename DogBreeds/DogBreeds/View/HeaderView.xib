@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="DogBreeds" customModuleProvider="target">
+            <connections>
+                <outlet property="titleLabel" destination="qT5-mP-y3x" id="lHi-m8-FnN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="47"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qT5-mP-y3x">
+                    <rect key="frame" x="16" y="8" width="302" height="31"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                    <color key="textColor" red="0.20057959950000001" green="0.45027160640000002" blue="0.2303685104" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qT5-mP-y3x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1Rw-zb-Jqq"/>
+                <constraint firstAttribute="bottom" secondItem="qT5-mP-y3x" secondAttribute="bottom" constant="8" id="B3C-Mu-Y7q"/>
+                <constraint firstItem="qT5-mP-y3x" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Eql-QQ-dat"/>
+                <constraint firstAttribute="trailing" secondItem="qT5-mP-y3x" secondAttribute="trailing" constant="8" id="sXb-Ce-UmV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-150.72463768115944" y="-162.38839285714286"/>
+        </view>
+    </objects>
+</document>

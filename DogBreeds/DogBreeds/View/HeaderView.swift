@@ -1,5 +1,5 @@
 //
-//  BreedView.swift
+//  HeaderView.swift
 //  DogBreeds
 //
 //  Created by SERGIO J RAFAEL ORDINE on 24/08/21.
@@ -7,23 +7,19 @@
 
 import UIKit
 
+class HeaderView: UIView, UIContentView {
 
-/// Breed row content view
-class BreedView:UIView, UIContentView {
-    
-    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    private var appliedConfiguration: BreedConfiguration! = BreedConfiguration()
-    private let xibName: String = "BreedView"
-    private let placeholderImageName = "dog"
+    private var appliedConfiguration: HeaderConfiguration! = HeaderConfiguration()
+    private let xibName: String = "HeaderView"
     private var contentView: UIView!
     
     
     var configuration: UIContentConfiguration {
         get { appliedConfiguration }
         set {
-            guard let newConfig = newValue as? BreedConfiguration else { return }
+            guard let newConfig = newValue as? HeaderConfiguration else { return }
             apply(configuration: newConfig)
         }
     }
@@ -31,7 +27,7 @@ class BreedView:UIView, UIContentView {
     
     /// Init the container view with a goiven configuration
     /// - Parameter configuration: cell configuration
-    init(configuration: BreedConfiguration) {
+    init(configuration: HeaderConfiguration) {
         super.init(frame: .zero)
         xibSetup()
         apply(configuration: configuration)
@@ -53,11 +49,9 @@ class BreedView:UIView, UIContentView {
     
     /// Apply the given configuration to set this view.
     /// - Parameter configuration: cell configuration
-    private func apply(configuration: BreedConfiguration) {
+    private func apply(configuration: HeaderConfiguration) {
         guard appliedConfiguration != configuration else { return }
         appliedConfiguration = configuration
-        titleLabel.text  = appliedConfiguration.name
-        image.image = appliedConfiguration.image ?? UIImage(named: placeholderImageName)
+        titleLabel.text  = appliedConfiguration.title
     }
-    
 }
