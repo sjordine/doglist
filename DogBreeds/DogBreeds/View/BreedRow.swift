@@ -11,42 +11,15 @@ import UIKit
 /// A cell to represent a dog breed
 class BreedRow: UICollectionViewCell {
     
-    
-    /// Breed name
-    var name: String? {
-        didSet {
-            update()
-        }
+    func defaultCell() -> BreedConfiguration {
+        var content = BreedConfiguration()
+        content.image = nil
+        content.name = ""
+        return content
     }
-    
-    
-    /// Breed image
-    var image: UIImage? {
-        didSet {
-            update()
-        }
-    }
-    
-    
-    /// Update the cell due to a configuration change
-    private func update() {
-        OperationQueue.main.addOperation {
-            self.setNeedsUpdateConfiguration()
-        }
-    }
-
     
     override func prepareForReuse() {
-        name = ""
-        image = nil
+        contentConfiguration = defaultCell()
     }
-    
-    
-    override func updateConfiguration(using state: UICellConfigurationState) {
-        var content = BreedConfiguration().updated(for: state)
-        content.image = image
-        content.name = name
-        contentConfiguration = content
-    }
-    
+  
 }

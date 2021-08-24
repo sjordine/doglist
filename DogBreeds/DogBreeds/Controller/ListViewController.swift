@@ -71,8 +71,9 @@ class ListViewController: UIViewController {
                            bundle: nil)) {
             (cell, indexPath, item)  in
             
-            cell.name = item.name
-            
+            var configuration = cell.defaultCell()
+            configuration.name = item.name
+            cell.contentConfiguration = configuration
         }
         
         //2b. - Header registration
@@ -86,8 +87,10 @@ class ListViewController: UIViewController {
             let identifiers = self.dataSource.snapshot().sectionIdentifiers
             let breedGroup = identifiers[indexPath.section]
             
+            var configuration = supplementaryView.defaultCell()
+            configuration.title = breedGroup.isEmpty ? " " : breedGroup
             
-            supplementaryView.title = breedGroup.isEmpty ? " " : breedGroup
+            supplementaryView.contentConfiguration = configuration
             
         }
         

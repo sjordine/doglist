@@ -8,6 +8,8 @@
 import UIKit
 
 struct HeaderConfiguration: UIContentConfiguration {
+    
+    var title:String? = nil
 
     func makeContentView() -> UIView & UIContentView {
         return HeaderView(configuration: self)
@@ -20,5 +22,4 @@ struct HeaderConfiguration: UIContentConfiguration {
         return newConfig
     }
     
-    var title:String? = nil
 }
