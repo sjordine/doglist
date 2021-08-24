@@ -73,18 +73,17 @@ class ListViewController: UIViewController {
         }
         
         //2b. - Header registration
-        let headerRegistration =
-            
-            UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind:"header") { (supplementaryView, kind, indexPath) in
+        let headerRegistration = UICollectionView.SupplementaryRegistration<HeaderCell>(supplementaryNib: UINib(nibName: "HeaderCell",
+                                         bundle: nil),
+                 elementKind:"header") {
+                (supplementaryView, kind, indexPath) in
                 
-                var content = UIListContentConfiguration.plainHeader()
+                
+            let identifiers = self.dataSource.snapshot().sectionIdentifiers
+            let breedGroup = identifiers[indexPath.section]
             
-                let identifiers = self.dataSource.snapshot().sectionIdentifiers
-                let breedType = identifiers[indexPath.section]
             
-                content.text = breedType.isEmpty ? " " : breedType
-            
-                supplementaryView.contentConfiguration = content
+            supplementaryView.titleLabel.text = breedGroup.isEmpty ? " ": breedGroup
                 
             }
         
