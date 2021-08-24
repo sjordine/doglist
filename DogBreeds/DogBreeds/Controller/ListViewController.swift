@@ -69,21 +69,22 @@ class ListViewController: UIViewController {
         let cellRegistration = UICollectionView.CellRegistration<BreedRow, DogBreed>(cellNib: UINib(nibName: "BreedRow", bundle: nil)) { cell, indexPath, item in
             cell.label.text = item.name
         }
-
+        
         //2b. - Header registration
-        let headerRegistration = UICollectionView.SupplementaryRegistration<HeaderCell>(supplementaryNib: UINib(nibName: "HeaderCell",
-                                         bundle: nil),
-                 elementKind:"header") {
-                (supplementaryView, kind, indexPath) in
-                
-                
+        let headerRegistration = UICollectionView.SupplementaryRegistration<HeaderCell>(
+            supplementaryNib: UINib(nibName: "HeaderCell",
+                                    bundle: nil),
+            elementKind:"header") {
+            (supplementaryView, kind, indexPath) in
+            
+            
             let identifiers = self.dataSource.snapshot().sectionIdentifiers
             let breedGroup = identifiers[indexPath.section]
             
             
             supplementaryView.titleLabel.text = breedGroup.isEmpty ? " ": breedGroup
-                
-            }
+            
+        }
         
         //2c. - Data Source setup
         dataSource = UICollectionViewDiffableDataSource<String, DogBreed>(collectionView: collectionView) {

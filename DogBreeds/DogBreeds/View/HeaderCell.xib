@@ -39,7 +39,7 @@
             <connections>
                 <outlet property="titleLabel" destination="GK6-qf-QxT" id="rt5-cx-m5G"/>
             </connections>
-            <point key="canvasLocation" x="181" y="44"/>
+            <point key="canvasLocation" x="91" y="41"/>
         </collectionReusableView>
     </objects>
 </document>
