@@ -56,7 +56,7 @@ class ListViewController: UIViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         //1a. layout setup - Defines a plain list layout
-        var config = UICollectionLayoutListConfiguration(appearance: .plain)
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         config.headerMode = .supplementary
         return UICollectionViewCompositionalLayout.list(using: config)
     }
@@ -75,17 +75,15 @@ class ListViewController: UIViewController {
         //2b. - Header registration
         let headerRegistration =
             
-            UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind:"header") { (supplementaryView, sectionName, indexPath) in
-                
-                let identifiers = self.dataSource.snapshot().sectionIdentifiers
+            UICollectionView.SupplementaryRegistration<UICollectionViewListCell>(elementKind:"header") { (supplementaryView, kind, indexPath) in
                 
                 var content = UIListContentConfiguration.plainHeader()
-                
+            
+                let identifiers = self.dataSource.snapshot().sectionIdentifiers
                 let breedType = identifiers[indexPath.section]
-                
+            
                 content.text = breedType.isEmpty ? " " : breedType
-                
-                
+            
                 supplementaryView.contentConfiguration = content
                 
             }
