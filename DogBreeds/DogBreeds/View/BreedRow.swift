@@ -11,6 +11,8 @@ import UIKit
 /// A cell to represent a dog breed
 class BreedRow: UICollectionViewCell {
     
+    /// Creates the defafult cell configuration for the breed cell
+    /// - Returns: A default, empty configuraton for this cell
     func defaultCell() -> BreedConfiguration {
         var content = BreedConfiguration()
         content.image = nil
