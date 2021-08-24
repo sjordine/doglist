@@ -70,7 +70,9 @@ class ListViewController: UIViewController {
             cellNib: UINib(nibName: "BreedRow",
                            bundle: nil)) {
             (cell, indexPath, item)  in
-            cell.label.text = item.name
+            
+            cell.name = item.name
+            
         }
         
         //2b. - Header registration

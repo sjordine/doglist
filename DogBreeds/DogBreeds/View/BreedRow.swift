@@ -11,10 +11,47 @@ import UIKit
 /// A cell to represent a dog breed
 class BreedRow: UICollectionViewCell {
     
-    /// Dog icon or image
-    @IBOutlet weak var dogImage: UIImageView!
     
-    /// Row label
-    @IBOutlet weak var label: UILabel!
+    /// Breed name
+    var name: String? {
+        didSet {
+            update()
+        }
+    }
+    
+    
+    /// Breed image
+    var image: UIImage? {
+        didSet {
+            update()
+        }
+    }
+    
+    
+    /// Update the cell due to a configuration change
+    private func update() {
+        OperationQueue.main.addOperation {
+            self.setNeedsUpdateConfiguration()
+        }
+    }
+
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 10.0
+    }
+    
+    override func prepareForReuse() {
+        name = ""
+        image = nil
+    }
+    
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        var content = BreedConfiguration().updated(for: state)
+        content.image = image
+        content.name = name
+        contentConfiguration = content
+    }
     
 }
