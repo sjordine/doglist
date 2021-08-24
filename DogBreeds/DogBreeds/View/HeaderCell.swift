@@ -7,7 +7,11 @@
 
 import UIKit
 
+
+/// Breed Group header cell
 class HeaderCell: UICollectionReusableView {
+    
+    /// Header title
     @IBOutlet weak var titleLabel: UILabel!
     
 }
