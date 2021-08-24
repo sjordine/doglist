@@ -10,6 +10,15 @@ import UIKit
 struct HeaderConfiguration: UIContentConfiguration {
     
     var title:String? = nil
+    
+    
+    /// Creates the defafult cell configuration for the header cell
+    /// - Returns: A default, empty configuraton for this cell
+    static func defaultCell() -> HeaderConfiguration {
+        var content = HeaderConfiguration()
+        content.title = ""
+        return content
+    }
 
     func makeContentView() -> UIView & UIContentView {
         return HeaderView(configuration: self)

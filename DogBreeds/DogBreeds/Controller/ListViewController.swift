@@ -71,7 +71,7 @@ class ListViewController: UIViewController {
                            bundle: nil)) {
             (cell, indexPath, item)  in
             
-            var configuration = cell.defaultCell()
+            var configuration = BreedConfiguration.defaultCell()
             configuration.name = item.name
             cell.contentConfiguration = configuration
         }
@@ -87,7 +87,7 @@ class ListViewController: UIViewController {
             let identifiers = self.dataSource.snapshot().sectionIdentifiers
             let breedGroup = identifiers[indexPath.section]
             
-            var configuration = supplementaryView.defaultCell()
+            var configuration = HeaderConfiguration.defaultCell()
             configuration.title = breedGroup.isEmpty ? " " : breedGroup
             
             supplementaryView.contentConfiguration = configuration

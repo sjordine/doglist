@@ -11,6 +11,13 @@ struct BreedConfiguration: UIContentConfiguration {
     var image: UIImage? = nil
     var name:String? = nil
     
+    static func defaultCell() -> BreedConfiguration {
+        var content = BreedConfiguration()
+        content.image = nil
+        content.name = ""
+        return content
+    }
+    
     func makeContentView() -> UIView & UIContentView {
         return BreedView(configuration: self)
     }

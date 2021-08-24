@@ -11,16 +11,8 @@ import UIKit
 /// Breed Group header cell
 class HeaderCell: UICollectionViewCell {
     
-    /// Creates the defafult cell configuration for the header cell
-    /// - Returns: A default, empty configuraton for this cell
-    func defaultCell() -> HeaderConfiguration {
-        var content = HeaderConfiguration()
-        content.title = ""
-        return content
-    }
-    
     override func prepareForReuse() {
-        contentConfiguration = defaultCell()
+        contentConfiguration = HeaderConfiguration.defaultCell()
     }
     
 }
