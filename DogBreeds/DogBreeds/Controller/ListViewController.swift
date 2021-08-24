@@ -56,7 +56,7 @@ class ListViewController: UIViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         //1a. layout setup - Defines a plain list layout
-        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var config = UICollectionLayoutListConfiguration(appearance: .plain)
         config.headerMode = .supplementary
         return UICollectionViewCompositionalLayout.list(using: config)
     }
