@@ -66,7 +66,10 @@ class ListViewController: UIViewController {
     private func configureDataSource() {
         
         //2a. - Cell registration
-        let cellRegistration = UICollectionView.CellRegistration<BreedRow, DogBreed>(cellNib: UINib(nibName: "BreedRow", bundle: nil)) { cell, indexPath, item in
+        let cellRegistration = UICollectionView.CellRegistration<BreedRow, DogBreed>(
+            cellNib: UINib(nibName: "BreedRow",
+                           bundle: nil)) {
+            (cell, indexPath, item)  in
             cell.label.text = item.name
         }
         
