@@ -6,20 +6,21 @@
 //
 import UIKit
 
-struct BreedConfiguration: UIContentConfiguration, Hashable {
+struct BreedConfiguration: UIContentConfiguration {
+    
+    var image: UIImage? = nil
+    var name:String? = nil
     
     func makeContentView() -> UIView & UIContentView {
         return BreedView(configuration: self)
     }
     
     func updated(for state: UIConfigurationState) -> BreedConfiguration {
-        guard let state = state as? UICellConfigurationState else { return self }
+        guard let _ = state as? UICellConfigurationState else { return self }
         var newConfig =  BreedConfiguration()
         newConfig.image = image
         newConfig.name = name
         return newConfig
     }
-    
-    var image: UIImage? = nil
-    var name:String? = nil
+
 }

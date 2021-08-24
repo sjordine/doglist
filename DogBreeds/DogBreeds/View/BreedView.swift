@@ -34,7 +34,7 @@ class BreedView:UIView, UIContentView {
     init(configuration: BreedConfiguration) {
         super.init(frame: .zero)
         xibSetup()
-        apply(configuration: configuration)
+        self.configuration = configuration
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +54,7 @@ class BreedView:UIView, UIContentView {
     /// Apply the given configuration to set this view.
     /// - Parameter configuration: cell configuration
     private func apply(configuration: BreedConfiguration) {
-        guard appliedConfiguration != configuration else { return }
+       // guard appliedConfiguration != configuration else { return }
         appliedConfiguration = configuration
         titleLabel.text  = appliedConfiguration.name
         image.image = appliedConfiguration.image ?? UIImage(named: placeholderImageName)

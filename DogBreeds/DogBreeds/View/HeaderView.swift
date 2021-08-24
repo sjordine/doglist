@@ -50,7 +50,6 @@ class HeaderView: UIView, UIContentView {
     /// Apply the given configuration to set this view.
     /// - Parameter configuration: cell configuration
     private func apply(configuration: HeaderConfiguration) {
-        guard appliedConfiguration != configuration else { return }
         appliedConfiguration = configuration
         titleLabel.text  = appliedConfiguration.title
     }

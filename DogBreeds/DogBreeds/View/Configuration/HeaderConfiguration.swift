@@ -7,14 +7,14 @@
 
 import UIKit
 
-struct HeaderConfiguration: UIContentConfiguration, Hashable {
+struct HeaderConfiguration: UIContentConfiguration {
 
     func makeContentView() -> UIView & UIContentView {
         return HeaderView(configuration: self)
     }
     
     func updated(for state: UIConfigurationState) -> HeaderConfiguration {
-        guard let state = state as? UICellConfigurationState else { return self }
+        guard let _ = state as? UICellConfigurationState else { return self }
         var newConfig =  HeaderConfiguration()
         newConfig.title = title
         return newConfig
