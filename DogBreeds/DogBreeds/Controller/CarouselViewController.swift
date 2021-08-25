@@ -32,7 +32,6 @@ class CarouselViewController: UIViewController {
                     let breeds = breedGroups[group] ?? []
                     snapshot.appendItems(breeds, toSection: group)
                 }
-                print(breedGroups.keys)
                 OperationQueue.main.addOperation {
                     dataSource.apply(snapshot, animatingDifferences: false)
                 }
@@ -72,7 +71,6 @@ class CarouselViewController: UIViewController {
             let globalHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(44))
             let globalHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: globalHeaderSize, elementKind: "header", alignment: .top)
             // Set true or false depending on the desired behavior
-            globalHeader.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
             globalHeader.pinToVisibleBounds = true
             
             section.boundarySupplementaryItems = [globalHeader]
