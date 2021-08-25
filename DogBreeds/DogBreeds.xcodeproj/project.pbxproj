@@ -23,6 +23,10 @@
 		49E14BDD26D3D30D00015924 /* DogServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E14BDC26D3D30D00015924 /* DogServices.swift */; };
 		49E14BDF26D3D37500015924 /* DogErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E14BDE26D3D37500015924 /* DogErrors.swift */; };
 		49EF4E4126D6707700197AA3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E4026D6707700197AA3 /* ListViewController.swift */; };
+		49EF4E4626D670F300197AA3 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF4E4226D670F300197AA3 /* HeaderCell.xib */; };
+		49EF4E4726D670F300197AA3 /* BreedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E4326D670F300197AA3 /* BreedRow.swift */; };
+		49EF4E4826D670F300197AA3 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E4426D670F300197AA3 /* HeaderCell.swift */; };
+		49EF4E4926D670F300197AA3 /* BreedRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49EF4E4526D670F300197AA3 /* BreedRow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		49E14BDC26D3D30D00015924 /* DogServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogServices.swift; sourceTree = "<group>"; };
 		49E14BDE26D3D37500015924 /* DogErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogErrors.swift; sourceTree = "<group>"; };
 		49EF4E4026D6707700197AA3 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		49EF4E4226D670F300197AA3 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		49EF4E4326D670F300197AA3 /* BreedRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedRow.swift; sourceTree = "<group>"; };
+		49EF4E4426D670F300197AA3 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		49EF4E4526D670F300197AA3 /* BreedRow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreedRow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +174,10 @@
 		491A700826CD32C300885A59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49EF4E4326D670F300197AA3 /* BreedRow.swift */,
+				49EF4E4526D670F300197AA3 /* BreedRow.xib */,
+				49EF4E4426D670F300197AA3 /* HeaderCell.swift */,
+				49EF4E4226D670F300197AA3 /* HeaderCell.xib */,
 				49EF4E2F26D5ADBE00197AA3 /* Configuration */,
 				491A6FDC26CD324A00885A59 /* Main.storyboard */,
 			);
@@ -343,8 +355,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EF4E4626D670F300197AA3 /* HeaderCell.xib in Resources */,
 				491A6FE326CD324B00885A59 /* LaunchScreen.storyboard in Resources */,
 				491A6FE026CD324B00885A59 /* Assets.xcassets in Resources */,
+				49EF4E4926D670F300197AA3 /* BreedRow.xib in Resources */,
 				491A6FDE26CD324A00885A59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +388,7 @@
 				49E14BDD26D3D30D00015924 /* DogServices.swift in Sources */,
 				491A700F26CD343700885A59 /* APIError.swift in Sources */,
 				491A700D26CD33FF00885A59 /* DataRequestManager.swift in Sources */,
+				49EF4E4826D670F300197AA3 /* HeaderCell.swift in Sources */,
 				491A6FD726CD324A00885A59 /* AppDelegate.swift in Sources */,
 				49EF4E4126D6707700197AA3 /* ListViewController.swift in Sources */,
 				49E14BD726D3D27600015924 /* DogBreed.swift in Sources */,
@@ -381,6 +396,7 @@
 				49E14BDF26D3D37500015924 /* DogErrors.swift in Sources */,
 				49E14BDB26D3D2DD00015924 /* DogImage.swift in Sources */,
 				491A6FD926CD324A00885A59 /* SceneDelegate.swift in Sources */,
+				49EF4E4726D670F300197AA3 /* BreedRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
