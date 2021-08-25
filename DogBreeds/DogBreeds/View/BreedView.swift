@@ -48,6 +48,7 @@ class BreedView:UIView, UIContentView {
     func xibSetup() {
         loadXib(targetView: &contentView, xibName: xibName)
         self.contentView.clipsToBounds = true
+        self.roundCorners(.allCorners, radius: 5.0)
     }
     
     
