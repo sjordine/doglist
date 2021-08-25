@@ -34,6 +34,8 @@
 		49EF4E5426D6714600197AA3 /* BreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E5026D6714600197AA3 /* BreedView.swift */; };
 		49EF4E5526D6714600197AA3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E5126D6714600197AA3 /* HeaderView.swift */; };
 		49EF4E5726D6715000197AA3 /* UIView+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E5626D6715000197AA3 /* UIView+Setup.swift */; };
+		49EF4E5926D673C500197AA3 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E5826D673C500197AA3 /* CarouselViewController.swift */; };
+		49EF4E5B26D67B5400197AA3 /* CarouselError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EF4E5A26D67B5400197AA3 /* CarouselError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		49EF4E5026D6714600197AA3 /* BreedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedView.swift; sourceTree = "<group>"; };
 		49EF4E5126D6714600197AA3 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		49EF4E5626D6715000197AA3 /* UIView+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Setup.swift"; sourceTree = "<group>"; };
+		49EF4E5826D673C500197AA3 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		49EF4E5A26D67B5400197AA3 /* CarouselError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				49EF4E4026D6707700197AA3 /* ListViewController.swift */,
+				49EF4E5826D673C500197AA3 /* CarouselViewController.swift */,
+				49EF4E5A26D67B5400197AA3 /* CarouselError.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				49EF4E4D26D6712B00197AA3 /* HeaderConfiguration.swift in Sources */,
 				491A700F26CD343700885A59 /* APIError.swift in Sources */,
 				49EF4E4C26D6712B00197AA3 /* BreedConfiguration.swift in Sources */,
+				49EF4E5926D673C500197AA3 /* CarouselViewController.swift in Sources */,
 				491A700D26CD33FF00885A59 /* DataRequestManager.swift in Sources */,
 				49EF4E5526D6714600197AA3 /* HeaderView.swift in Sources */,
 				49EF4E4826D670F300197AA3 /* HeaderCell.swift in Sources */,
@@ -420,6 +427,7 @@
 				491A6FD726CD324A00885A59 /* AppDelegate.swift in Sources */,
 				49EF4E4126D6707700197AA3 /* ListViewController.swift in Sources */,
 				49E14BD726D3D27600015924 /* DogBreed.swift in Sources */,
+				49EF4E5B26D67B5400197AA3 /* CarouselError.swift in Sources */,
 				491A701126CD36A200885A59 /* APIKey.swift in Sources */,
 				49E14BDF26D3D37500015924 /* DogErrors.swift in Sources */,
 				49E14BDB26D3D2DD00015924 /* DogImage.swift in Sources */,

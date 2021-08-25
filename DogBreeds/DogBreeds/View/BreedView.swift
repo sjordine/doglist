@@ -57,6 +57,7 @@ class BreedView:UIView, UIContentView {
        // guard appliedConfiguration != configuration else { return }
         appliedConfiguration = configuration
         titleLabel.text  = appliedConfiguration.name
+        
         image.image = appliedConfiguration.image ?? UIImage(named: placeholderImageName)
     }
     
