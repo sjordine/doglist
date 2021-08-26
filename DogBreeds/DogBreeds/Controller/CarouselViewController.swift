@@ -65,7 +65,7 @@ class CarouselViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 10
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 1, bottom: 10, trailing: 0)
             
             //1a. - 4.Supplementary view definition
             let globalHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(44))
